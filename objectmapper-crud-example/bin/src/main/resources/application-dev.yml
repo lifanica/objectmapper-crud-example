@@ -1,0 +1,23 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /release
+
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/rm_dev_db
+    username: rmuser
+    password: rmuser
+     
+  jackson:
+    serialization: 
+      write-dates-as-timestamps: false
+    
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace

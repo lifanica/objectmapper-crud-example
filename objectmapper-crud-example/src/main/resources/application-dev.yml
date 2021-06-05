@@ -1,0 +1,32 @@
+server:
+  port: 8081
+  servlet:
+    context-path: /release
+
+spring:
+  jpa:
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+  datasource:
+    url: jdbc:mysql://${MY   SQL_HOST:localhost}:3306/objectmapper_example
+    username: root
+    password:
+    initialization-mode: always
+  jackson:
+    serialization: 
+      write-dates-as-timestamps: false
+  application:
+    name: ObjectMapper-Crud-Example
+  flyway:
+    enabled: false
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
